@@ -1,0 +1,26 @@
+{
+  "context-menu": {
+    "atom-text-editor": [
+      {
+        "label": "Toggle fabric-go",
+        "command": "fabric-go:toggle"
+      }
+    ]
+  },
+  "menu": [
+    {
+      "label": "Packages",
+      "submenu": [
+        {
+          "label": "fabric-go",
+          "submenu": [
+            {
+              "label": "Toggle",
+              "command": "fabric-go:toggle"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
