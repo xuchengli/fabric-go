@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "atom-space-pen-views": "^2.2.0",
+    "dockerode": "^2.5.8",
     "shelljs": "^0.8.3"
   }
 }
