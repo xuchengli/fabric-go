@@ -1,2 +1,4 @@
 # fabric-go
-为了方便在Atom上调试fabric智能合约
+It is for go chaincode debug of fabric.
+
+![fabric-go.png](fabric-go.png)

@@ -2,7 +2,7 @@
   "name": "fabric-go",
   "main": "./lib/fabric-go",
   "version": "0.0.0",
-  "description": "It is for go chaincode of fabric debug",
+  "description": "It is for go chaincode debug of fabric",
   "keywords": [],
   "activationCommands": {},
   "repository": "https://github.com/xuchengli/fabric-go.git",
