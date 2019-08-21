@@ -7,41 +7,45 @@ It is for go chaincode debug of fabric.
 
 1. Environment installation.
 
-  * Nodejs: <https://nodejs.org/en/download/package-manager>
-  * Docker: <https://docs.docker.com/install>
-  * Docker Compose: <https://docs.docker.com/compose/install>
+    - Nodejs: <https://nodejs.org/en/download/package-manager>
+    - Docker: <https://docs.docker.com/install>
+    - Docker Compose: <https://docs.docker.com/compose/install>
 
 2. Docker images preparation for fabric.
 
-  * Orderer image.
+    - Orderer image.
 
-    ```
-    $ docker pull hyperledger/fabric-orderer
-    ```
+      ```
+      $ docker pull hyperledger/fabric-orderer
+      ```
 
-  * Peer image.
+    - Peer image.
 
-    ```
-    $ docker pull hyperledger/fabric-peer
-    ```
+      ```
+      $ docker pull hyperledger/fabric-peer
+      ```
 
-  * CouchDB image.
+    - CouchDB image.
 
-    ```
-    $ docker pull hyperledger/fabric-couchdb
-    ```
+      ```
+      $ docker pull hyperledger/fabric-couchdb
+      ```
 
-  * CLI tools image.
+    - CLI tools image.
 
-    ```
-    $ docker pull hyperledger/fabric-tools
-    ```
+      ```
+      $ docker pull hyperledger/fabric-tools
+      ```
 
-  * Chaincode environment image.
+    - Chaincode environment image.
 
-    ```
-    $ docker pull hyperledger/fabric-ccenv
-    ```
+      ```
+      $ docker pull hyperledger/fabric-ccenv
+      ```
+
+## Installation
+
+  <https://atom.io/packages/fabric-go>
 
 ## Instruction
 
