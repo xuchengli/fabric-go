@@ -3,7 +3,7 @@ version: '2'
 services:
   orderer:
     container_name: orderer
-    image: hyperledger/fabric-orderer
+    image: hyperledger/fabric-orderer:1.4
     environment:
       - FABRIC_LOGGING_SPEC=debug
       - ORDERER_GENERAL_LISTENADDRESS=orderer
@@ -23,7 +23,7 @@ services:
 
   peer:
     container_name: peer
-    image: hyperledger/fabric-peer
+    image: hyperledger/fabric-peer:1.4
     environment:
       - CORE_PEER_ID=peer
       - CORE_PEER_ADDRESS=peer:7051
@@ -53,7 +53,7 @@ services:
 
   couchdb:
     container_name: couchdb
-    image: hyperledger/fabric-couchdb
+    image: hyperledger/fabric-couchdb:0.4.18
     environment:
       - COUCHDB_USER=
       - COUCHDB_PASSWORD=
@@ -62,7 +62,7 @@ services:
 
   cli:
     container_name: cli
-    image: hyperledger/fabric-tools
+    image: hyperledger/fabric-tools:1.4
     tty: true
     environment:
       - GOPATH=/opt/gopath
@@ -86,7 +86,7 @@ services:
 
   chaincode:
     container_name: chaincode
-    image: hyperledger/fabric-ccenv
+    image: hyperledger/fabric-ccenv:1.4
     tty: true
     environment:
       - GOPATH=/opt/gopath

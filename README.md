@@ -16,31 +16,31 @@ It is for go chaincode debug of fabric.
     - Orderer image.
 
       ```
-      $ docker pull hyperledger/fabric-orderer
+      $ docker pull hyperledger/fabric-orderer:1.4
       ```
 
     - Peer image.
 
       ```
-      $ docker pull hyperledger/fabric-peer
+      $ docker pull hyperledger/fabric-peer:1.4
       ```
 
     - CouchDB image.
 
       ```
-      $ docker pull hyperledger/fabric-couchdb
+      $ docker pull hyperledger/fabric-couchdb:0.4.18
       ```
 
     - CLI tools image.
 
       ```
-      $ docker pull hyperledger/fabric-tools
+      $ docker pull hyperledger/fabric-tools:1.4
       ```
 
     - Chaincode environment image.
 
       ```
-      $ docker pull hyperledger/fabric-ccenv
+      $ docker pull hyperledger/fabric-ccenv:1.4
       ```
 
 ## Installation
