@@ -62,3 +62,4 @@ typings/
 
 myc.block
 artifacts/chaincode
+artifacts/ca
