@@ -10,6 +10,7 @@ services:
     command: sh -c 'fabric-ca-server start -b admin:adminpw'
     volumes:
       - ./ca:/etc/hyperledger/fabric-ca-server
+      - ./ca-clients:/root/ca-clients
     ports:
       - 7054:7054
 
@@ -32,8 +33,6 @@ services:
       - ./orderer.block:/etc/hyperledger/fabric/orderer.block
     ports:
       - 7050:7050
-    depends_on:
-      - ca
 
   peer:
     container_name: peer
@@ -62,8 +61,6 @@ services:
       - 7051:7051
       - 7053:7053
     depends_on:
-      - ca
-      - orderer
       - couchdb
 
   couchdb:
@@ -94,11 +91,6 @@ services:
         - ./msp:/etc/hyperledger/msp
         # - ./chaincode:/opt/gopath/src/chaincodedev/chaincode
         - ./:/opt/gopath/src/chaincodedev/
-    depends_on:
-      - ca
-      - orderer
-      - couchdb
-      - peer
 
   chaincode:
     container_name: chaincode
@@ -118,8 +110,3 @@ services:
         - /var/run/:/host/var/run/
         - ./msp:/etc/hyperledger/msp
         - ./chaincode:/opt/gopath/src/chaincode
-    depends_on:
-      - ca
-      - orderer
-      - couchdb
-      - peer

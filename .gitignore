@@ -63,3 +63,5 @@ typings/
 myc.block
 artifacts/chaincode
 artifacts/ca
+artifacts/ca-clients
+artifacts/msp
