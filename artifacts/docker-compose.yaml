@@ -110,3 +110,11 @@ services:
         - /var/run/:/host/var/run/
         - ./msp:/etc/hyperledger/msp
         - ./chaincode:/opt/gopath/src/chaincode
+
+  configtxlator:
+    image: zhigui/configtxlator:latest
+    container_name: configtxlator
+    ports:
+      - "7059:7059"
+    volumes:
+      - /tmp/configtxlator/data:/work/data
