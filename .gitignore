@@ -60,8 +60,9 @@ typings/
 # next.js build output
 .next
 
-myc.block
+genesis.block
 artifacts/chaincode
 artifacts/ca
 artifacts/ca-clients
 artifacts/msp
+artifacts/*.zip
