@@ -60,7 +60,7 @@ typings/
 # next.js build output
 .next
 
-genesis.block
+*.block
 mychannel.tx
 artifacts/chaincode
 artifacts/ca

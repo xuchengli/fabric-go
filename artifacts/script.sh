@@ -13,11 +13,11 @@ sleep 10s
 
 # first we create the channel against the specified configuration in myc.tx
 # this call returns a channel configuration block - myc.block - to the CLI container
-peer channel create -c myc -f myc.tx -o orderer:7050
+peer channel create -c mychannel -f mychannel.tx -o orderer:7050
 
 # now we will join the channel and start the chain with myc.block serving as the
 # channel's first block (i.e. the genesis block)
-peer channel join -b myc.block
+peer channel join -b mychannel.block
 
 # Now the user can proceed to build and start chaincode in one terminal
 # And leverage the CLI container to issue install instantiate invoke query commands in another
