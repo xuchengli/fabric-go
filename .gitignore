@@ -61,6 +61,7 @@ typings/
 .next
 
 genesis.block
+mychannel.tx
 artifacts/chaincode
 artifacts/ca
 artifacts/ca-clients
