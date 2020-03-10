@@ -21,7 +21,7 @@ services:
       - FABRIC_LOGGING_SPEC=debug
       - ORDERER_GENERAL_LISTENADDRESS=orderer
       - ORDERER_GENERAL_GENESISMETHOD=file
-      - ORDERER_GENERAL_GENESISFILE=orderer.block
+      - ORDERER_GENERAL_GENESISFILE=genesis.block
       - ORDERER_GENERAL_LOCALMSPID=DEFAULT
       - ORDERER_GENERAL_LOCALMSPDIR=/etc/hyperledger/msp
       - GRPC_TRACE=all=true,
@@ -30,7 +30,7 @@ services:
     command: orderer
     volumes:
       - ./msp:/etc/hyperledger/msp
-      - ./orderer.block:/etc/hyperledger/fabric/orderer.block
+      - ./genesis.block:/etc/hyperledger/fabric/genesis.block
     ports:
       - 7050:7050
 
