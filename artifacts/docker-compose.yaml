@@ -29,7 +29,7 @@ services:
     working_dir: /opt/gopath/src/github.com/hyperledger/fabric
     command: orderer
     volumes:
-      - ./msp:/etc/hyperledger/msp
+      - ./orderer-msp:/etc/hyperledger/msp
       - ./genesis.block:/etc/hyperledger/fabric/genesis.block
     ports:
       - 7050:7050
@@ -54,7 +54,7 @@ services:
       - CORE_LEDGER_STATE_COUCHDBCONFIG_INTERNALQUERYLIMIT=1000
     volumes:
         - /var/run/:/host/var/run/
-        - ./msp:/etc/hyperledger/msp
+        - ./peer-msp:/etc/hyperledger/msp
     working_dir: /opt/gopath/src/github.com/hyperledger/fabric/peer
     command: peer node start --peer-chaincodedev=true
     ports:
@@ -88,7 +88,7 @@ services:
     command: /bin/bash -c './script.sh'
     volumes:
         - /var/run/:/host/var/run/
-        - ./msp:/etc/hyperledger/msp
+        - ./peer-msp:/etc/hyperledger/msp
         # - ./chaincode:/opt/gopath/src/chaincodedev/chaincode
         - ./:/opt/gopath/src/chaincodedev/
 
@@ -108,7 +108,7 @@ services:
     command: /bin/bash -c 'sleep 6000000'
     volumes:
         - /var/run/:/host/var/run/
-        - ./msp:/etc/hyperledger/msp
+        - ./peer-msp:/etc/hyperledger/msp
         - ./chaincode:/opt/gopath/src/chaincode
 
   configtxlator:
