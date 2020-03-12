@@ -61,12 +61,7 @@ typings/
 .next
 
 *.block
-mychannel.tx
+*.tx
 artifacts/chaincode
 artifacts/ca
 artifacts/ca-clients
-artifacts/*.zip
-artifacts/peer-msp/*
-!artifacts/peer-msp/config.yaml
-artifacts/orderer-msp/*
-!artifacts/orderer-msp/config.yaml

@@ -1,8 +1,0 @@
-NodeOUs:
-  Enable: true
-  PeerOUIdentifier:
-    Certificate: cacerts/ca-cert.pem
-    OrganizationalUnitIdentifier: peer
-  AdminOUIdentifier:
-    Certificate: cacerts/ca-cert.pem
-    OrganizationalUnitIdentifier: admin
