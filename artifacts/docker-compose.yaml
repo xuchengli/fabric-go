@@ -7,7 +7,7 @@ services:
     environment:
       - FABRIC_CA_SERVER_HOME=/etc/hyperledger/fabric-ca-server
       - FABRIC_CA_SERVER_CA_NAME=ca
-    command: sh -c 'fabric-ca-server start -b admin:adminpw'
+    command: sh -c 'fabric-ca-server start -b bootstrap:bootstrappw'
     volumes:
       - ./ca:/etc/hyperledger/fabric-ca-server
       - ./ca-clients:/root/ca-clients
