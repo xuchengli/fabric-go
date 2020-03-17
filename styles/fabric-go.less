@@ -20,6 +20,25 @@
       }
     }
   }
+  .identity-table {
+    width: 100%;
+    table-layout: fixed;
+    tr {
+      border-bottom: 1px solid #282c34;
+    }
+    th {
+      padding: 3px 10px;
+    }
+    th:last-of-type {
+      width: 50%;
+    }
+    td {
+      padding: 3px 10px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+  }
 }
 .primary-line {
   display: flex;
@@ -117,4 +136,7 @@
       text-align: right;
     }
   }
+}
+.tooltip-inner {
+  text-align: left;
 }
