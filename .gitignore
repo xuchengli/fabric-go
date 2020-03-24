@@ -63,5 +63,6 @@ typings/
 *.block
 *.tx
 artifacts/chaincode
-artifacts/ca
+artifacts/ca/*
+!artifacts/ca/fabric-ca-server-config.yaml
 artifacts/ca-clients
