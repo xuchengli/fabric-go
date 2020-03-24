@@ -5,7 +5,7 @@ services:
     container_name: ca
     image: hyperledger/fabric-ca:1.4
     environment:
-      - FABRIC_CA_SERVER_HOME=/etc/hyperledger/fabric-ca-server
+      - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
       - FABRIC_CA_SERVER_CA_NAME=ca
     command: sh -c 'fabric-ca-server start -b bootstrap:bootstrappw'
     volumes:
