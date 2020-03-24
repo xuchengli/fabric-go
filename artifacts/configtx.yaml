@@ -41,15 +41,15 @@ Organizations:
                 Type: Signature
                 Rule: "OR('OrdererMSP.admin')"
 
-    - &Org1
+    - &Zhigui
         # DefaultOrg defines the organization which is used in the sampleconfig
         # of the fabric.git development environment
-        Name: Org1MSP
+        Name: ZhiguiMSP
 
         # ID to load the MSP definition as
-        ID: Org1MSP
+        ID: ZhiguiMSP
 
-        MSPDir: ca-clients/peer/msp
+        MSPDir: ca-clients/zhigui.com/msp
 
         # Policies defines the set of policies at this level of the config tree
         # For organization policies, their canonical path is usually
@@ -57,20 +57,51 @@ Organizations:
         Policies:
             Readers:
                 Type: Signature
-                Rule: "OR('Org1MSP.admin', 'Org1MSP.peer', 'Org1MSP.client')"
+                Rule: "OR('ZhiguiMSP.admin', 'ZhiguiMSP.peer', 'ZhiguiMSP.client')"
             Writers:
                 Type: Signature
-                Rule: "OR('Org1MSP.admin', 'Org1MSP.client')"
+                Rule: "OR('ZhiguiMSP.admin', 'ZhiguiMSP.client')"
             Admins:
                 Type: Signature
-                Rule: "OR('Org1MSP.admin')"
+                Rule: "OR('ZhiguiMSP.admin')"
 
         AnchorPeers:
             # AnchorPeers defines the location of peers which can be used
             # for cross org gossip communication.  Note, this value is only
             # encoded in the genesis block in the Application section context
-            - Host: peer
+            - Host: peer0.zhigui.com
               Port: 7051
+
+    - &IBM
+        # DefaultOrg defines the organization which is used in the sampleconfig
+        # of the fabric.git development environment
+        Name: IBMMSP
+
+        # ID to load the MSP definition as
+        ID: IBMMSP
+
+        MSPDir: ca-clients/ibm.com/msp
+
+        # Policies defines the set of policies at this level of the config tree
+        # For organization policies, their canonical path is usually
+        #   /Channel/<Application|Orderer>/<OrgName>/<PolicyName>
+        Policies:
+            Readers:
+                Type: Signature
+                Rule: "OR('IBMMSP.admin', 'IBMMSP.peer', 'IBMMSP.client')"
+            Writers:
+                Type: Signature
+                Rule: "OR('IBMMSP.admin', 'IBMMSP.client')"
+            Admins:
+                Type: Signature
+                Rule: "OR('IBMMSP.admin')"
+
+        AnchorPeers:
+            # AnchorPeers defines the location of peers which can be used
+            # for cross org gossip communication.  Note, this value is only
+            # encoded in the genesis block in the Application section context
+            - Host: peer0.ibm.com
+              Port: 9051
 
 ################################################################################
 #
@@ -290,13 +321,15 @@ Profiles:
         Consortiums:
             SampleConsortium:
                 Organizations:
-                    - *Org1
+                    - *Zhigui
+                    - *IBM
     OneOrgChannel:
         Consortium: SampleConsortium
         <<: *ChannelDefaults
         Application:
             <<: *ApplicationDefaults
             Organizations:
-                - *Org1
+                - *Zhigui
+                - *IBM
             Capabilities:
                 <<: *ApplicationCapabilities

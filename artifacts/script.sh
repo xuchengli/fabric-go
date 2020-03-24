@@ -13,11 +13,11 @@ sleep 10s
 
 # first we create the channel against the specified configuration in myc.tx
 # this call returns a channel configuration block - myc.block - to the CLI container
-CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/ca-clients/admin/msp peer channel create -c mychannel -f mychannel.tx -o orderer:7050
+CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/ca-clients/zhigui.com/users/admin@zhigui/msp peer channel create -c mychannel -f mychannel.tx -o orderer:7050
 
 # now we will join the channel and start the chain with myc.block serving as the
 # channel's first block (i.e. the genesis block)
-CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/ca-clients/admin/msp peer channel join -b mychannel.block
+CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/ca-clients/zhigui.com/users/admin@zhigui/msp peer channel join -b mychannel.block
 
 # Now the user can proceed to build and start chaincode in one terminal
 # And leverage the CLI container to issue install instantiate invoke query commands in another
