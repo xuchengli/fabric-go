@@ -21,7 +21,7 @@
     "atom-space-pen-views": "^2.2.0",
     "dockerode": "^2.5.8",
     "js-yaml": "^3.13.1",
-    "shelljs": "^0.8.3",
+    "shelljs": "^0.8.5",
     "wait-on": "^4.0.1"
   }
 }
